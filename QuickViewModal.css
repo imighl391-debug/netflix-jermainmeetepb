@@ -1,0 +1,146 @@
+/* === MODAL OVERLAY === */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* === MODAL CONTAINER === */
+.modal-content {
+  background: #111;
+  color: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+  transform: scale(0.98);
+  animation: modalIn 0.3s ease forwards;
+}
+
+/* === ANIMATION === */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === VIDEO === */
+.modal-video {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* === CLOSE BUTTON === */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  color: #fff;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: #e50914;
+}
+
+/* === ACTION BUTTONS === */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-buttons .primary {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-buttons .primary:hover {
+  background: #f6121d;
+}
+
+.modal-buttons .secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.modal-buttons .secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* === LEARN MORE BUTTON === */
+.learn-more-btn {
+  background: linear-gradient(135deg, #8a5cff, #00d4ff);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.learn-more-btn:hover {
+  transform: scale(1.05);
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .modal-video {
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    font-size: 1.3rem;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .modal-buttons .primary,
+  .modal-buttons .secondary {
+    width: 100%;
+  }
+}

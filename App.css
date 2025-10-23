@@ -1,0 +1,205 @@
+/* ---------- Base Styling ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0b0b;
+  overflow: hidden;
+}
+
+/* ---------- Home Grid Cards ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px;
+}
+
+.card {
+  background: linear-gradient(135deg, #8a5cff 0%, #00d4ff 100%);
+  border-radius: 20px;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #00d4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.hint {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive Grid ---------- */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Splash (Animation Screen) ---------- */
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* ---------- Jermaine SVG Animation ---------- */
+:root {
+  --primary-gradient: linear-gradient(135deg, #2EABFF 0%, #00d4ff 100%);
+  --shadow-colour: black;
+  --shadow-intensity: 0.6;
+}
+
+.netflix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+svg {
+  width: 900px;
+  max-width: 2000px;
+  filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.7));
+}
+
+.shadow-start {
+  stop-color: var(--shadow-colour);
+  stop-opacity: var(--shadow-intensity);
+}
+
+.shadow-end {
+  stop-color: var(--shadow-colour);
+  stop-opacity: 0;
+}
+
+/* ---------- Legacy Splash Text (Optional Fallback) ---------- */
+.splash h1 {
+  color: #00d4ff;
+  font-size: 6rem;
+  font-weight: 700;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.splash.scaled h1 {
+  transform: scale(2);
+  opacity: 0;
+}
+video.ai-video {
+    width: 400px;
+}
+.splash-container {
+  background: black;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.jp-logo {
+  display: flex;
+  gap: 10px;
+  font-size: 6rem;
+  font-weight: 800;
+  font-family: "Impact", sans-serif;
+  background: linear-gradient(45deg, #00d4ff, #2eabff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.jp-letter {
+  display: inline-block;
+  animation: bounce 0.8s ease-out forwards;
+}
+
+.jp-letter:nth-child(1) { animation-delay: 0s; }
+.jp-letter:nth-child(2) { animation-delay: 0.1s; }
+.jp-letter:nth-child(3) { animation-delay: 0.2s; }
+.jp-letter:nth-child(4) { animation-delay: 0.3s; }
+.jp-letter:nth-child(5) { animation-delay: 0.4s; }
+.jp-letter:nth-child(6) { animation-delay: 0.5s; }
+.jp-letter:nth-child(7) { animation-delay: 0.6s; }
+.jp-letter:nth-child(8) { animation-delay: 0.7s; }
+
+@keyframes bounce {
+  0% { transform: translateY(100px); opacity: 0; }
+  60% { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+
+.studio-text {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  letter-spacing: 3px;
+  color: #2eabff;
+  animation: fadeIn 2s ease-out 1s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

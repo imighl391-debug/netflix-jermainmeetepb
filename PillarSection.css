@@ -1,0 +1,98 @@
+/* ========== Base Layout ========== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fb;
+}
+
+.pillars-section {
+  text-align: center;
+  padding: 100px 40px;
+  background: linear-gradient(135deg, #ffffff 0%, #f4f6fb 100%);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #333;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #8A5CFF, #00D4FF);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+/* ========== Pillar Cards ========== */
+.pillars-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pillar-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px 25px;
+  width: 250px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, #8A5CFF, #00D4FF);
+  color: #fff;
+}
+
+/* ========== Icon ========== */
+.pillar-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* ========== Texts ========== */
+.pillar-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.pillar-description {
+  font-size: 0.95rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.pillar-card:hover .pillar-description {
+  color: #f8f9fb;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 992px) {
+  .pillars-container {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pillar-card {
+    width: 80%;
+  }
+}
